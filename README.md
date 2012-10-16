@@ -10,4 +10,4 @@ This will remove the 2 highest zoom leves of `world`, `nether` and `the_end`.
 
 [Minecraft Overviewer]: https://github.com/overviewer/Minecraft-Overviewer
 ---
-Version 0.1
+Version 0.1.1

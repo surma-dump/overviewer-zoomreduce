@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/voxelbrain/goptions"
+	"io"
 	"log"
 	"os"
 	"path/filepath"
@@ -12,7 +13,7 @@ import (
 )
 
 const (
-	VERSION     = "0.1"
+	VERSION     = "0.1.1"
 	CONFIG_FILE = "overviewerConfig.js"
 )
 
@@ -72,6 +73,7 @@ func main() {
 			log.Fatalf("Could not open config file %s for writing: %s", CONFIG_FILE, err)
 		}
 		defer f.Close()
+		io.WriteString(f, "var overviewerConfig = ")
 		enc := json.NewEncoder(f)
 		enc.Encode(config)
 	default:
